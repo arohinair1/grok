@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #f6f3eb;
+  --color-cream-deep: #ebe4d6;
+  --color-paper: #fcfbf7;
+  --color-forest: #173d32;
+  --color-forest-deep: #0e2821;
+  --color-sage: #8ea386;
+  --color-sage-soft: #e5eee2;
+  --color-warm: #efeae1;
+  --color-charcoal: #24302b;
+  --color-muted: #5c665f;
+  --color-line: #e4ddd0;
+  --color-gold: #9a7b4f;
+  --font-sans: var(--font-source), "Source Sans 3", sans-serif;
+  --font-display: var(--font-fraunces), Georgia, serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    radial-gradient(1200px 500px at 10% -10%, rgba(142, 163, 134, 0.18), transparent 55%),
+    linear-gradient(180deg, #f8f5ee 0%, #f3efe6 100%);
+  color: var(--color-charcoal);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: #d7e3d4;
+  color: var(--color-forest-deep);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-forest);
+  outline-offset: 3px;
+}
+
+.display {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+}
+
+.quiet-link {
+  color: var(--color-forest);
+  text-decoration: underline;
+  text-decoration-color: rgba(23, 61, 50, 0.25);
+  text-underline-offset: 3px;
+}
+
+.quiet-link:hover {
+  text-decoration-color: var(--color-forest);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
